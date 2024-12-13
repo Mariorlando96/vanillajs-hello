@@ -1,12 +1,5 @@
-/* eslint-disable */
-import "bootstrap";
-import "./style.css";
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
-
-window.onload = function() {
-  // Arrays for domain generation
+window.onload = function () {
   let pronoun = ["I", "you", "he", "she", "it", "we", "they"];
   let adj = ["great", "big", "small", "fast"];
   let noun = ["jogger", "racoon", "accelerator", "account"];
@@ -25,7 +18,7 @@ window.onload = function() {
     }
   }
 
-  //function to get a specific number of random domains
+  // Function to get random domains
   function getRandomDomains(arr, count) {
     let result = [];
     for (let i = 0; i < count; i++) {
@@ -35,7 +28,7 @@ window.onload = function() {
     return result;
   }
 
-  // Event listener for generating domains
+  // Event listener
   document.getElementById("generateBtn").addEventListener("click", () => {
     const count = parseInt(document.getElementById("domainCount").value, 10);
     const domainListElement = document.getElementById("domainList");
@@ -47,9 +40,8 @@ window.onload = function() {
 
     const randomDomains = getRandomDomains(arrOfDomains, count);
 
-    // Display the generated domains
     domainListElement.innerHTML = `<ul>${randomDomains
-      .map(domain => `<li>${domain}</li>`)
+      .map((domain) => `<li>${domain}</li>`)
       .join("")}</ul>`;
   });
 };
